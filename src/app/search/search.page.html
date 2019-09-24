@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-searchbar showCancelButton="focus" (ionChange)="getItems($event)" debounce="1000"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="foodList && foodList.length > 0">
+      <ion-item *ngFor="let food of foodList" [routerDirection]="'root'" [routerLink]="'/food-report/'+food.ndbno" >
+        <div>{{food.name}}</div>
+      </ion-item>
+  </ion-list>
+  <ion-card *ngIf="foodList.length == 0">
+    {{errormessage}}
+  </ion-card>
+</ion-content>

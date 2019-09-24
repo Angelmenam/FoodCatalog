@@ -1,0 +1,7 @@
+{
+  "name": "USAA-EMA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
